@@ -8,7 +8,7 @@ def preprocess(file_path):
   r-type: text sentences and corresponding labels
   """
   lines = []
-  text = open(file_path, "r")
+  text = open(file_path, "r", encoding="utf8")
   for line in text:
        lines.append(line.replace('[', '').replace(']', '').replace('"', '').replace('"', '').replace('(','').replace('...', '').replace('”', ''). \
                  replace("'",'').replace('U-DATE','O').replace('L-PERSON', 'I-PERSON').replace('U-GPE','GPE').replace('B-GPE','GPE').replace('I-GPE','GPE'). \

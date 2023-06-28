@@ -17,7 +17,7 @@ class TrainOptions():
     def initialize(self, parser):
         """Define the common options that are used in both training and test."""
         # basic parameters
-        parser.add_argument('--dataroot', type=str, default='./datasets/ner.csv', help='path to text (should have subfolders trainA, trainB, valA, valB, etc)')
+        parser.add_argument('--dataroot', type=str, default='./datasets/preprocessed_hisab_ner_text.csv', help='path to text (should have subfolders trainA, trainB, valA, valB, etc)')
         parser.add_argument('--pred_text_path', type=str, default='./datasets/pred_text.txt', help='path to images (should have subfolders trainA, trainB, valA, valB, etc)')
         
         parser.add_argument('--gpu_ids', type=str, default='0', help='gpu ids: e.g. 0  0,1,2, 0,2. use -1 for CPU')

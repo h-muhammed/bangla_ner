@@ -16,7 +16,9 @@ else:
     tokenizer = BertTokenizerFast.from_pretrained('bert-base-cased')
 
 def align_word_ids(texts):
-
+    """i-type: text
+    r-type: list[int]
+    """
     tokenized_inputs = tokenizer(texts, padding='max_length', max_length=512, truncation=True)
 
     word_ids = tokenized_inputs.word_ids()
@@ -45,10 +47,14 @@ def align_word_ids(texts):
 
 
 def pred_on_text(model, opt):
-
-
+    """I-type: transformer model
+    r-type: prediction options.
+    --------------------------
+    return:
+           None.
+    """
     sentence = []
-    text = open(opt.pred_text_path, "r", encoding="utf8")
+    text = open(opt.pred_text_path, "r", encoding="utf8")  # read the test text.
     for line in text:
         sentence.append(line.strip())
     use_cuda = torch.cuda.is_available()
@@ -69,8 +75,20 @@ def pred_on_text(model, opt):
 
     predictions = logits_clean.argmax(dim=1).tolist()
     prediction_label = [ids_to_labels[i] for i in predictions]
-    print('------------------------------------------------------------------------\n\nInput Text: {}'.format(sentence[0].split(' ')))
-    print('Predicted labels: {}\n'.format(prediction_label))
+    sentence = sentence[0].split(' ')
+    ner_result = ''
+    if len(sentence)==len(prediction_label):
+        for idx in range(len(prediction_label)):
+            # if prediction_label[idx] == 'U-PERSON':
+            #     ner_result += sentence[idx] + ','
+            if prediction_label[idx] == 'B-PERSON':
+                ner_result += sentence[idx]
+            elif prediction_label[idx] == 'I-PERSON':
+                ner_result += ' ' + sentence[idx]
+        print(ner_result+'\n')
+    else: 
+        print('------------------------------------------------------------------------\n\nInput Text: {}'.format(sentence[0]))
+        print('Predicted labels: {}\n'.format(prediction_label))
 
 
 if __name__ == '__main__':
