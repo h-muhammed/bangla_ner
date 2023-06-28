@@ -4,6 +4,24 @@ This repo is for detecting names corresponding to the given sentence. Suppose an
 
 # Installing
 
+This project is primarily developed in windows 10 environment. <br/>
+For Windows: <br />
+Create a virtual environment by below cmd <br />
+```
+pip install virtualenv
+virtualvenv hisab_ner
+```
+For activation <br />
+```
+hisab_ner\Scripts\activate
+``` 
+And then install relevant packages by below cmd <br />
+
+```
+pip install -r requirement.txt
+```
+
+
 For Linux: <br />
 Create a virtual environment by below cmd <br />
 ```
@@ -18,9 +36,6 @@ And then install relevant dependencies by below cmd <br />
 ```
 pip install -r requirement.txt
 ```
-
-
-For Windows:
 
 
 # Datasets pipelining
