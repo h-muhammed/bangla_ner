@@ -22,14 +22,20 @@ For the final datasets, we filtered around 3300 ideal samples. Below are few exa
 
 # Installing
 
-For Linux:
-Create a virtual environment by below cmd
-`python -m venv hisab_ner`
-`source hisab_ner/bin/activate`
+For Linux: <br />
+Create a virtual environment by below cmd <br />
+```
+python -m venv hisab_ner
+```
+For activation <br />
+```
+source hisab_ner/bin/activate
+``` 
+And then install relevant dependencies by below cmd <br />
 
-and then run dependencies in requirement.txt file by below cmd
-
-`pip install -r requirement.txt`
+```
+pip install -r requirement.txt
+```
 
 
 For Windows:
@@ -42,8 +48,12 @@ For Windows:
         |___imgs
         |___output
         |___data_preprocess
+        |         |___text_process.py
+        |         |___Hisab_Ner.txt
         |___src
             |___datasets
+            |      |____hisab_ner.csv
+            |      |____pred_text.txt
             |___evaluate.py
             |___model.py
             |___predict.py
@@ -55,18 +65,28 @@ For Windows:
 
 
 # Implementation
-Our approach:
+### Our approach:
 
 
-    ### training
+#### Train <br />
+For gpu, add `--gpu_ids 1,2, or 3` etc. For cpu, `-1` <br/>
+```
+python train.py --dataroot datasets/ner.csv --model_name BanglaBert --gpu_ids -1
+```
+<br/>
 
-    ### prediction:
+#### Inference  <br/> 
+Put inference text in `datasets/pred_text.txt`  <br/>  
+```
+python predict.py --modle_name BanglaBert --gpu_ids -1
+```
 
-# To-Do
--[] Design and develop an web API for demonstrating the prediction result.
-    -[] tools: fastapi
--[] Dockerize the environment for independent platforms.
-    -[] tools: docker, docker-compose
+# To-Do  <br/>
+
+- [ ] Design and develop an web API for demonstrating the prediction result. <br/>
+    - [ ] tools: fastapi <br/>
+- [ ] Dockerize the environment for independent platforms.  <br/>
+    - [ ] tools: docker, docker-compose <br/>
 
 # Acknowledgement
 Specail thanks goes to Hisab coding test system for assinging and sharing well organized resource and clear instructions. 
