@@ -89,10 +89,12 @@ python predict.py --modle_name BanglaBert --gpu_ids -1
     - [ ] tools: docker, docker-compose <br/>
 
 # Acknowledgement
-Specail thanks goes to Hisab coding test system for assinging and sharing well organized resource and clear instructions. 
-[paper](#https://github.com/Rifat1493/Bengali-NER), (#https://arxiv.org/abs/2205.00034)
-[Hisab datasets 1](#https://github.com/Rifat1493/Bengali-NER/tree/master/annotated%20data)
-[Hisab datasets 2](#https://raw.githubusercontent.com/banglakit/bengali-ner-data/master/main.jsonl)
-[Hagging face](#https://huggingface.co/sagorsarker/mbert-bengali-ner)
-[medium blogs](#https://medium.com/mysuperai/what-is-named-entity-recognition-ner-and-how-can-i-use-it-2b68cf6f545d)
-[misc](#http://nlpprogress.com/english/named_entity_recognition.html), (https://towardsdatascience.com/named-entity-recognition-with-bert-in-pytorch-a454405e0b6a)
+Specail thanks goes to Hisab coding test system for assinging and sharing a well organized resource and clear instructions. <br/> <br/>
+[paper](https://arxiv.org/abs/2205.00034)  <br/>
+[Bengali_Ner](https://github.com/Rifat1493/Bengali-NER)  <br/>
+[Hisab datasets 1](https://github.com/Rifat1493/Bengali-NER/tree/master/annotated%20data)  <br/>
+[Hisab datasets 2](https://raw.githubusercontent.com/banglakit/bengali-ner-data/master/main.jsonl)  <br/>
+[Hagging face](https://huggingface.co/sagorsarker/mbert-bengali-ner)  <br/>
+[medium blogs](https://medium.com/mysuperai/what-is-named-entity-recognition-ner-and-how-can-i-use-it-2b68cf6f545d)  <br/>
+[misc](http://nlpprogress.com/english/named_entity_recognition.html) <br/>
+https://towardsdatascience.com/named-entity-recognition-with-bert-in-pytorch-a454405e0b6a
