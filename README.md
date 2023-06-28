@@ -1,23 +1,5 @@
 # Welcome to Hisab Ner
-
-
-# Datasets pipelining
-There are about 3500 annotated text samples. Bellow are the couple of samples.
-
-
-So, according to the model, we have to deciplane the samples. In this regards, We need to erase the puctuations, as well as 
-remove some irregular samples such as bellows:
-
-
-To some extent, we had to perform some investigate the whole datasets for checking the irregular annotated samples such as bellows:
-
-
-Eventually, we analyzed and measured the annotated labels quality and nessecities. The original datasets have nearly 20 different 
-labels and among them some are unnessesary and we figured out that these are irrelavent to our job. Then, we eradicated them from the labels tags.
-
-For the final datasets, we filtered around 3300 ideal samples. Below are few example of our some ideal samples:
-
-
+![alt-text-1](image1.png "title-1") ![alt-text-2](image2.png "title-2")
 
 
 # Installing
@@ -39,6 +21,25 @@ pip install -r requirement.txt
 
 
 For Windows:
+
+
+# Datasets pipelining
+There are about 3500 annotated text samples. Bellow are the couple of samples.
+![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+
+
+So, according to the model, we have to disciplineregardpunctuationsBelownecessitiesunnecessaryirrelevantlabelexamples the samples. In this regards, We need to erase the puctuations, as well as 
+remove some irregular samples such as bellows:
+
+
+To some extent, we had to perform some investigate the whole datasets for checking the irregular annotated samples such as bellows:
+
+
+Eventually, we analyzed and measured the annotated labels quality and nessecities. The original datasets have nearly 20 different 
+labels and among them some are unnessesary and we figured out that these are irrelavent to our job. Then, we eradicated them from the labels tags.
+
+For the final datasets, we filtered around 3300 ideal samples. Below are fw example of our some ideal samples:
+![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
 
 
 
@@ -81,7 +82,7 @@ Put inference text in `datasets/pred_text.txt`  <br/>
 python predict.py --modle_name BanglaBert --gpu_ids -1
 ```
 
-# To-Do  <br/>
+# Whats Next i.e: To-Do  <br/>
 
 - [ ] Design and develop an web API for demonstrating the prediction result. <br/>
     - [ ] tools: fastapi <br/>
