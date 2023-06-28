@@ -104,10 +104,11 @@ python train.py --dataroot datasets/ner.csv --model_name BanglaBert --gpu_ids -1
 <br/>
 
 #### Inference  <br/> 
-Put inference text in `datasets/pred_text.txt`  <br/>  
+Put inference text in `src/datasets/pred_text.txt`  <br/> Download the checkpoints model from the [shared link](https://drive.google.com/drive/folders/102B6IUpwJ-hj659a5elTQUeboSOpzrLe?usp=sharing)  and put it in the `/output/checkpoints/` folder  <br/>
 ```
 python predict.py --modle_name BanglaBert --gpu_ids -1
 ```
+
 
 # Whats Next i.e: To-Do  <br/>
 
