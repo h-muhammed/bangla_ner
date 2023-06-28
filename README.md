@@ -24,6 +24,24 @@ For Windows:
 
 
 # Datasets pipelining
+There are about 3500 annotated text samples. Bellow are the couple of samples.
+![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+
+
+So, according to the model, we have to disciplineregardpunctuationsBelownecessitiesunnecessaryirrelevantlabelexamples the samples. In this regards, We need to erase the puctuations, as well as 
+remove some irregular samples such as bellows:
+
+
+To some extent, we had to perform some investigate the whole datasets for checking the irregular annotated samples such as bellows:
+
+
+Eventually, we analyzed and measured the annotated labels quality and nessecities. The original datasets have nearly 20 different 
+labels and among them some are unnessesary and we figured out that these are irrelavent to our job. Then, we eradicated them from the labels tags.
+
+For the final datasets, we filtered around 3300 ideal samples. Below are fw example of our some ideal samples:
+![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+
+# Datasets pipelining
 There are about 3500 annotated text samples. Below are a couple of samples: <br/>
 ```
 ["অগ্রণী ব্যাংকের জ্যেষ্ঠ কর্মকর্তা পদে নিয়োগ পরীক্ষার প্রশ্নপত্র ফাঁসের অভিযোগ উঠেছে।", ["B-ORG", "L-ORG", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O"]]
@@ -92,6 +110,20 @@ class HisabNerBertModel(torch.nn.Module):
 Since our job was to detect the name from text, we noticed that the train datasets has lots of labels and most of them are not required for our task. Hence, we decided to shrink the labels to minimized the number labels which was 7 at the end. The final annotated labels are `['B-PERSON', 'GPE', 'I-PERSON', 'LAW', 'O', 'ORG', 'U-PERSON']`. At the begining the number of labels are around 20.
 
 
+
+
+#### Train <br />
+For gpu, add `--gpu_ids 1,2, or 3` etc. For cpu, `-1` <br/>
+```
+python train.py --dataroot datasets/ner.csv --model_name BanglaBert --gpu_ids -1
+```
+<br/>
+
+#### Inference  <br/> 
+Put inference text in `datasets/pred_text.txt`  <br/>  
+```
+python predict.py --modle_name BanglaBert --gpu_ids -1
+```
 
 
 #### Train <br />
