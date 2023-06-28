@@ -36,9 +36,10 @@ Eventually, we analyzed and measured the annotated labels quality and necessitie
 labels and among them some are unnecssesary and we figured out that these are irrelevant to our job. Thus, we eradicated them from the sample annotations. We chose 7 different labels for our model.
 <br/>
 For the final datasets, we filtered around 3467 ideal samples. Below are a few examples of our 10 ideal samples:  
-<br/>
-![alt text](https://github.com/h-muhammed/hisab_ner/blob/feature/develop/imgs/datasets.PNG)
-
+<br/> <br/>
+<p align="center">
+  <img src="https://github.com/h-muhammed/hisab_ner/blob/feature/develop/imgs/datasets.PNG" title="Ideal Samples">
+ </p>
 
 
 # Project Structure
