@@ -109,20 +109,6 @@ Put inference text in `datasets/pred_text.txt`  <br/>
 python predict.py --modle_name BanglaBert --gpu_ids -1
 ```
 
-
-#### Train <br />
-For gpu, add `--gpu_ids 1,2, or 3` etc. For cpu, `-1` <br/>
-```
-python train.py --dataroot datasets/ner.csv --model_name BanglaBert --gpu_ids -1
-```
-<br/>
-
-#### Inference  <br/> 
-Put inference text in `datasets/pred_text.txt`  <br/>  
-```
-python predict.py --modle_name BanglaBert --gpu_ids -1
-```
-
 # Whats Next i.e: To-Do  <br/>
 
 - [ ] Design and develop an web API for demonstrating the prediction result. <br/>
