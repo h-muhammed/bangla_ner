@@ -24,24 +24,6 @@ For Windows:
 
 
 # Datasets pipelining
-There are about 3500 annotated text samples. Bellow are the couple of samples.
-![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
-
-
-So, according to the model, we have to disciplineregardpunctuationsBelownecessitiesunnecessaryirrelevantlabelexamples the samples. In this regards, We need to erase the puctuations, as well as 
-remove some irregular samples such as bellows:
-
-
-To some extent, we had to perform some investigate the whole datasets for checking the irregular annotated samples such as bellows:
-
-
-Eventually, we analyzed and measured the annotated labels quality and nessecities. The original datasets have nearly 20 different 
-labels and among them some are unnessesary and we figured out that these are irrelavent to our job. Then, we eradicated them from the labels tags.
-
-For the final datasets, we filtered around 3300 ideal samples. Below are fw example of our some ideal samples:
-![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
-
-# Datasets pipelining
 There are about 3500 annotated text samples. Below are a couple of samples: <br/>
 ```
 ["অগ্রণী ব্যাংকের জ্যেষ্ঠ কর্মকর্তা পদে নিয়োগ পরীক্ষার প্রশ্নপত্র ফাঁসের অভিযোগ উঠেছে।", ["B-ORG", "L-ORG", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O"]]
@@ -50,11 +32,12 @@ There are about 3500 annotated text samples. Below are a couple of samples: <br/
 <br/>
 However, according to our chosen model, we have to discipline teh original text. To some extent, we were performed a thorough  investigate among the datasets for checking the irregular annotated samples
 <br/>
-Eventually, we analyzed and measured the annotated labels quality and nessecities. The original datasets have nearly 20 different 
-labels and among them some are unnessesary and we figured out that these are irrelavent to our job. Thus, we eradicated them from the samples annotations. We chosed 7 different labels for our model.
+Eventually, we analyzed and measured the annotated labels quality and necessities. The original datasets have nearly 20 different 
+labels and among them some are unnecssesary and we figured out that these are irrelevant to our job. Thus, we eradicated them from the sample annotations. We chose 7 different labels for our model.
 <br/>
-For the final datasets, we filtered around 3467 ideal samples. Below are fw example of our some ideal samples:  <br/>
-![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+For the final datasets, we filtered around 3467 ideal samples. Below are a few examples of our 10 ideal samples:  
+<br/>
+![alt text](https://github.com/h-muhammed/hisab_ner/blob/feature/develop/imgs/datasets.PNG)
 
 
 
