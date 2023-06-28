@@ -1,6 +1,6 @@
 # Welcome to Hisab Ner
-![alt-text-1](image1.png "title-1") ![alt-text-2](image2.png "title-2")
-
+This repo is for detecting names corresponding to the given sentence. Suppose an example sentence 
+<br/> `আব্দুর রহিম নামের কাস্টমারকে একশ টাকা বাকি দিলাম।` <br/> The ner model should generate `আব্দুর রহিম` <br/>
 
 # Installing
 
@@ -101,7 +101,10 @@ For gpu, add `--gpu_ids 1,2, or 3` etc. For cpu, `-1` <br/>
 ```
 python train.py --dataroot datasets/ner.csv --model_name BanglaBert --gpu_ids -1
 ```
-<br/>
+#### Accuracy and Loss graph 
+<p align="center">
+  <img src="https://github.com/h-muhammed/hisab_ner/blob/feature/develop/imgs/loss.png" title="Ideal Samples">
+ </p>
 
 #### Inference  <br/> 
 Put inference text in `src/datasets/pred_text.txt`  <br/> Download the checkpoints model from the [shared link](https://drive.google.com/drive/folders/102B6IUpwJ-hj659a5elTQUeboSOpzrLe?usp=sharing)  and put it in the `/output/checkpoints/` folder  <br/>
