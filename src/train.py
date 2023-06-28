@@ -110,8 +110,6 @@ if __name__ == '__main__':
     print('The number of training samples = %d' % dataset_size)
 
 
-    df = df[0:10]
-
     df_train, df_val, df_test = np.split(df.sample(frac=1, random_state=42),
                                 [int(.8 * len(df)), int(.9 * len(df))])
     print(opt.model_name)
