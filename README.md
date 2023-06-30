@@ -144,4 +144,4 @@ Specail thanks goes to Hisab coding test system for assinging and sharing a well
 [Hagging face](https://huggingface.co/sagorsarker/mbert-bengali-ner)  <br/>
 [medium blogs](https://medium.com/mysuperai/what-is-named-entity-recognition-ner-and-how-can-i-use-it-2b68cf6f545d)  <br/>
 [misc](http://nlpprogress.com/english/named_entity_recognition.html) <br/>
-https://towardsdatascience.com/named-entity-recognition-with-bert-in-pytorch-a454405e0b6a
+[towardsdatascience blo](https://towardsdatascience.com/named-entity-recognition-with-bert-in-pytorch-a454405e0b6a)
