@@ -130,7 +130,10 @@ Put inference text in `src/datasets/pred_text.txt`  <br/> Download the checkpoin
 ```
 python predict.py --modle_name BanglaBert --gpu_ids -1
 ```
-
+#### Inference  <br/>
+<p align="center">
+  <img src="https://github.com/h-muhammed/hisab_ner/blob/feature/develop/imgs/infer.PNG" title="Ideal Samples">
+ </p>
 
 # Whats Next i.e: To-Do  <br/>
 
