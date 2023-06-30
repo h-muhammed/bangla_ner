@@ -5,7 +5,7 @@ This repo is for detecting names corresponding to the given sentence. Suppose an
 # Installing
 
 This project is primarily developed in windows 10 environment. <br/>
-For Windows: <br />
+### For Windows: <br />
 Create a virtual environment by below cmd <br />
 ```
 pip install virtualenv
@@ -22,7 +22,7 @@ pip install -r requirement.txt
 ```
 
 
-For Linux: <br />
+### For Linux: <br />
 Create a virtual environment by below cmd <br />
 ```
 python -m venv hisab_ner
@@ -93,15 +93,19 @@ class HisabNerBertModel(torch.nn.Module):
     deployed by sagorsarkar. trained the bert model using 
     Bengali text with 7 different labels.
     """
+
     def __init__(self, opt):
-       
+
         super(HisabNerBertModel, self).__init__()
         self.opt = opt
-        self.hisabNerBanglaBert = AutoModelForTokenClassification.from_pretrained("sagorsarker/mbert-bengali-ner", num_labels=self.opt.num_labels)
-       
+        self.NerBanglaBert = AutoModelForTokenClassification.from_pretrained(
+            "sagorsarker/mbert-bengali-ner", num_labels=self.opt.num_labels)
+
     def forward(self, input_id, mask, label):
-        output = self.hisabNerBanglaBert(input_ids=input_id, attention_mask=mask, labels=label, return_dict=False)
-        
+        output = self.NerBanglaBert(
+            input_ids=input_id, attention_mask=mask, labels=label,
+            return_dict=False)
+
         return output
 ```
 
