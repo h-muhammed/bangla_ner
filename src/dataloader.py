@@ -53,7 +53,7 @@ def align_label(texts, labels, opt):
                 label_ids.append(labels_to_ids[labels[word_idx]])
             except Exception as ex:
                 label_ids.append(-100)
-                print(ex)
+                # print(ex)
         else:
             try:
                 label_ids.append(
@@ -61,7 +61,7 @@ def align_label(texts, labels, opt):
                     if label_all_tokens else -100)
             except Exception as ex:
                 label_ids.append(-100)
-                print(ex)
+                # print(ex)
         previous_word_idx = word_idx
 
     return label_ids

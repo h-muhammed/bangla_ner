@@ -23,7 +23,8 @@ def train_ner(model, df_train, df_val, opt):
     val_dataset = DataSequence(df_val, opt)
 
     train_dataloader = DataLoader(
-        train_dataset, num_workers=opt.num_workers, batch_size=opt.batch_size, shuffle=True)
+        train_dataset, num_workers=opt.num_workers,
+        batch_size=opt.batch_size, shuffle=True)
     val_dataloader = DataLoader(
         val_dataset, num_workers=opt.num_workers, batch_size=opt.batch_size)
 
@@ -87,9 +88,6 @@ def train_ner(model, df_train, df_val, opt):
                 total_acc_val += acc
                 total_loss_val += loss.item()
 
-        val_accuracy = total_acc_val / len(df_val)
-        val_loss = total_loss_val / len(df_val)
-
         print(
             f'Epochs: {epoch_num + 1} | Loss: {total_loss_train / len(df_train): .3f} | Accuracy: {total_acc_train / len(df_train): .3f} | Val_Loss: {total_loss_val / len(df_val): .3f} | Accuracy: {total_acc_val / len(df_val): .3f}')
 
@@ -108,9 +106,8 @@ if __name__ == '__main__':
     df = load_datasets(opt.dataroot)
     dataset_size = len(df)    # get the number of samples in the dataset.
     print('The number of training samples = %d' % dataset_size)
-
     df_train, df_val, df_test = np.split(df.sample(frac=1, random_state=42),
-                                         [int(.8 * len(df)), int(.9 * len(df))])
+                            [int(.8 * len(df)), int(.9 * len(df))])
     print(opt.model_name)
     if opt.model_name == 'BanglaBert':
         model = HisabNerBertModel(opt)

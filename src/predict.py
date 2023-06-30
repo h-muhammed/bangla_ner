@@ -36,13 +36,13 @@ def align_word_ids(texts):
                 label_ids.append(1)
             except Exception as ex:
                 label_ids.append(-100)
-                print(ex)
+                # print(ex)
         else:
             try:
                 label_ids.append(1 if label_all_tokens else -100)
             except Exception as ex:
                 label_ids.append(-100)
-                print(ex)
+                # print(ex)
         previous_word_idx = word_idx
 
     return label_ids
