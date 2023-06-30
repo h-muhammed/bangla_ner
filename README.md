@@ -5,7 +5,7 @@ This repo is for detecting names corresponding to the given sentence. Suppose an
 # Installing
 
 This project is primarily developed in windows 10 environment. <br/>
-For Windows: <br />
+### For Windows: <br />
 Create a virtual environment by below cmd <br />
 ```
 pip install virtualenv
@@ -22,7 +22,7 @@ pip install -r requirement.txt
 ```
 
 
-For Linux: <br />
+### For Linux: <br />
 Create a virtual environment by below cmd <br />
 ```
 python -m venv hisab_ner
