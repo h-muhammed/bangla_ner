@@ -110,7 +110,7 @@ class HisabNerBertModel(torch.nn.Module):
 ```
 
 #### Optimization
-Since our job was to detect the name from text, we noticed that the train datasets has lots of labels and most of them are not required for our task. Hence, we decided to shrink the labels to minimized the number labels which was 7 at the end. The final annotated labels are `['B-PERSON', 'GPE', 'I-PERSON', 'LAW', 'O', 'ORG', 'U-PERSON']`. At the begining the number of labels are around 20.
+Since our job was to detect the name from text, we noticed that the train datasets has lots of labels. As a result, the performance was not up to the mark. The inference result was severely inconsistent. Most of the labels are not required for our task. Hence, we decided to shrink the labels to minimize the number of labels which was 7 at the end. The final annotated labels are `['B-PERSON', 'GPE', 'I-PERSON', 'LAW', 'O', 'ORG', 'U-PERSON']`. At the beginning, the number of labels are around 20. We minimized the label in such a way that `['B-GPE', 'I-GPE', 'L-GPE']` to `'GPE'` likewise `['B-ORG', 'I-ORG', L-ORG']` to `'ORG'` etc. Finally, we trained the model with 3467 samples with 7 different labels and the model was 92% accurate.
 
 
 
