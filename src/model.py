@@ -14,11 +14,11 @@ class HisabNerBertModel(torch.nn.Module):
 
         super(HisabNerBertModel, self).__init__()
         self.opt = opt
-        self.NerBanglaBert = AutoModelForTokenClassification.from_pretrained(
+        self.hisabNerBanglaBert = AutoModelForTokenClassification.from_pretrained(
             "sagorsarker/mbert-bengali-ner", num_labels=self.opt.num_labels)
 
     def forward(self, input_id, mask, label):
-        output = self.NerBanglaBert(
+        output = self.hisabNerBanglaBert(
             input_ids=input_id, attention_mask=mask, labels=label,
             return_dict=False)
 
