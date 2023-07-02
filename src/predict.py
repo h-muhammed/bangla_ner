@@ -64,9 +64,6 @@ def pred_on_text(model, opt):
     device = torch.device("cuda" if use_cuda else "cpu")
     _, ids_to_labels = ids_exhge_labels(opt)
 
-    if opt.gpu_ids:
-        model = model.cuda()
-
     text = tokenizer(sentence, padding='max_length',
                      max_length=opt.max_token_length,
                      truncation=True, return_tensors="pt")
@@ -81,6 +78,7 @@ def pred_on_text(model, opt):
     predictions = logits_clean.argmax(dim=1).tolist()
     prediction_label = [ids_to_labels[i] for i in predictions]
     sentence = sentence[0].split(' ')
+    print(prediction_label)
     ner_result = ''
     if len(sentence) == len(prediction_label):
         for idx in range(len(prediction_label)):
@@ -103,4 +101,5 @@ if __name__ == '__main__':
     opt = TrainOptions().parse()   # get training options
 
     model = torch.load(opt.checkpoints_dir)  # load save model
+    # print(model)
     pred_on_text(model, opt)

@@ -19,8 +19,8 @@ class TrainOptions():
         training and test."""
         # basic parameters
         parser.add_argument('--dataroot', type=str,
-                            default='./datasets/ \
-                            preprocessed_hisab_ner_text.csv')
+                            default='./datasets' +
+                            '/preprocessed_hisab_ner_text.csv')
         parser.add_argument('--pred_text_path', type=str,
                             default='./datasets/pred_text.txt',
                             help='path to prediction text.')
