@@ -2,6 +2,7 @@
 import torch
 from transformers import BertTokenizerFast, AutoTokenizer
 
+from model import HisabNerBertModel
 from utils import TrainOptions
 from dataloader import ids_exhge_labels
 
@@ -12,6 +13,9 @@ if opt.model_name == 'BanglaBert':
 else:
     tokenizer = BertTokenizerFast.from_pretrained('bert-base-cased')
 label_all_tokens = False
+
+use_cuda = torch.cuda.is_available()
+device = torch.device("cuda" if use_cuda else "cpu")
 
 
 def align_word_ids(texts):
@@ -60,8 +64,10 @@ def pred_on_text(model, opt):
     text = open(opt.pred_text_path, "r", encoding="utf8")
     for line in text:
         sentence.append(line.strip())
-    use_cuda = torch.cuda.is_available()
-    device = torch.device("cuda" if use_cuda else "cpu")
+
+    # if use_cuda:
+    #     model = model.cuda()
+
     _, ids_to_labels = ids_exhge_labels(opt)
 
     text = tokenizer(sentence, padding='max_length',
@@ -99,7 +105,7 @@ def pred_on_text(model, opt):
 if __name__ == '__main__':
 
     opt = TrainOptions().parse()   # get training options
-
-    model = torch.load(opt.checkpoints_dir)  # load save model
-    # print(model)
+    model = HisabNerBertModel(opt)
+    # load save model
+    model = torch.load(opt.checkpoints_dir, map_location=device)
     pred_on_text(model, opt)
