@@ -3,6 +3,12 @@
 Simple api to load name entiry recognition pretrain model and apply prediction steps to infer the ner result.
 
 This api uses the great FastAPI and other few python packages!
+## Installation
+To install the required dependencies, we need to run below cmd:
+```
+pip install -r requirements.txt
+```
+
 
 ## Usage
 
