@@ -4,6 +4,13 @@ Simple api to load name entiry recognition pretrain model and apply prediction s
 
 This api uses the great FastAPI and other few python packages!
 
+## Installation
+To install the required dependencies, we need to run below cmd:
+```
+pip install -r requirements.txt
+```
+
+
 ## Usage
 
 Open up the cmd in `hisab_ner_api/src/` folder then run below cmd.
