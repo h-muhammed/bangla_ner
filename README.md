@@ -82,9 +82,9 @@ For the final datasets, we filtered around 3467 ideal samples. Below are a few e
 # Implementation
 ### Our approach:
 #### Initial Thought
-Since our job was to identify the persons name from the given text, so it can be easily done by text classification task. Whereas, datasets has different labels, perhaps, 20 different labels at most, we decided to design a model for multi-label classification task.  <br/>
+Since our job was to identify the persons name from the given text, so it can be easily done by text classification task. Whereas, in our datasets, each sample has different labels. Perhaps, 20 different labels at most, we decided to design a model for token-label classification task.  <br/>
 #### Model Design
-There are neumerous number of methodologies available out there to solve such sort of problems like as `basic probabilistic approach, rnn, lstm, transformer etc`. Amongst them transformer is the sota model such kind of multi-label jobs. So, we decided to implement a `transfer learning` method for viable solutions. We have a couple of options for choosing pretrain transformer such as `bert-base-cased` and `sagorsarker/mbert-bengali-ner` from hagging face. We implemented both model and `sagorsarker/mbert-bengali` bert model generated remarkable performance as we showed in loss graph. Later model perform well due to trained by large amount of Bengali text corpus for the specific job by `sagorsarkar`. The pretrained model deployed in hagging face hub. <br/>
+There are neumerous number of methodologies available out there to solve such sort of problems like as `basic probabilistic approach, rnn, lstm, transformer etc`. Amongst them transformer is the sota model such kind of token-label detection jobs. So, we decided to implement a `transfer learning` method for viable solutions. We have a couple of options for choosing pretrain transformer such as `bert-base-cased` and `sagorsarker/mbert-bengali-ner` from hagging face. We implemented both model and `sagorsarker/mbert-bengali` bert model generated remarkable performance as we showed in loss graph. Later model perform well due to trained by large amount of Bengali text corpus for the specific job by `sagorsarkar`. The pretrained model deployed in hagging face hub. <br/>
 Below are the model codesnipat backed by `sagorsarker/mbert-bengali-ner` hagging face pretrain model. <br/>
 ```python
 class HisabNerBertModel(torch.nn.Module):
@@ -110,7 +110,7 @@ class HisabNerBertModel(torch.nn.Module):
 ```
 
 #### Optimization
-Since our job was to detect the name from text, we noticed that the train datasets has lots of labels. As a result, the performance was not up to the mark. The inference result was severely inconsistent. Most of the labels are not required for our task. Hence, we decided to shrink the labels to minimize the number of labels which was 7 at the end. The final annotated labels are `['B-PERSON', 'GPE', 'I-PERSON', 'LAW', 'O', 'ORG', 'U-PERSON']`. At the beginning, the number of labels are around 20. We minimized the label in such a way that `['B-GPE', 'I-GPE', 'L-GPE']` to `'GPE'` likewise `['B-ORG', 'I-ORG', L-ORG']` to `'ORG'` etc. Finally, we trained the model with 3467 samples with 7 different labels and the model was 92% accurate.
+Since our job was to detect the name from text, we noticed that the train datasets has lots of labels. As a result, the performance was not up to the mark. The inference result was severely inconsistent. After analyzing the text, we realized that most of the labels are not required for our task. Hence, we decided to shrink the labels to minimize the number of unique labels which was 7 at the end. The final annotated labels are `['B-PERSON', 'GPE', 'I-PERSON', 'LAW', 'O', 'ORG', 'U-PERSON']`. At the beginning, the number of unique labels are around 20. We minimized the label in such a way that `['B-GPE', 'I-GPE', 'L-GPE']` to `'GPE'` likewise `['B-ORG', 'I-ORG', L-ORG']` to `'ORG'` etc. Finally, we trained the model with 3467 samples with 7 different labels and the model was 92% accurate.
 
 
 
